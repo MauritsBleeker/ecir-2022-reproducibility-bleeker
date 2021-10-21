@@ -1,0 +1,23 @@
+#!/bin/sh
+# The following lines instruct Slurm to allocate one GPU.
+#SBATCH -p gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=30gb
+#SBATCH --gres=gpu:1
+#SBATCH --time=24:00:00
+#SBATCH -o vsrn_paper_experiment_f30k%A_%a.out
+#SBATCH --exclude=ilps-cn108
+#SBATCH -c 10
+#SBATCH --array=16-20%5
+
+# Set-up the environment.
+
+
+conda activate ecir_reproduce_bleeker
+
+HPARAMS_FILE={path to repository}/jobs/vsrn/f30k/paper_experiments/baseline/f30k_vsrn_paper_experiments_hyper_params.txt
+
+export PYTHONPATH=$PYTHONPATH:{path to repository}/shared:{path to repository}
+
+# Start the experiment.
+python {path to repository}/VSRN/train.py --data_name=f30k_precomp --data_path={path to repository}/data/vsrn/ --vocab_path={path to vocab}/vsrn/vocab --cnn_type=resnet50 --workers=10 --max_len 60 $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)

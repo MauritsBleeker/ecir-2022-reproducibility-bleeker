@@ -1,0 +1,23 @@
+#!/bin/sh
+# The following lines instruct Slurm to allocate one GPU.
+#SBATCH -p gpu
+#SBATCH --gres=gpu:1
+#SBATCH --mem=50gb
+#SBATCH --gres=gpu:1
+#SBATCH --time=48:00:00
+#SBATCH -o vsepp_reproduce_coco%A_%a.out
+#SBATCH --exclude=ilps-cn108
+#SBATCH -c 10
+#SBATCH --array=1-20%15
+
+# Set-up the environment.
+
+
+conda activate MMC_reproduce
+
+export PYTHONPATH=$PYTHONPATH:{path to repo}/shared:{path to repo}
+
+HPARAMS_FILE={path to repo}/jobs/vsepp/coco/paper_experiments/baseline/coco_vsepp_paper_experiments_hyper_params.txt
+
+# Start the experiment.
+python /home/mbleeke1/MMC_reproduce/vsepp/train.py --data_name=coco --data_path={path to repo}/data/vsepp/coco --vocab_path={path to vocab}/ivi/ilps/personal/mbleeke1/mmc_reproduce/data/vsepp/coco --cnn_type=resnet50 --workers=10 $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)

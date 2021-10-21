@@ -1,0 +1,20 @@
+--experiment_name=coco_triplet_max --criterion triplet --max_violation --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet_max/0
+--experiment_name=coco_triplet_max --criterion triplet --max_violation --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet_max/1
+--experiment_name=coco_triplet_max --criterion triplet --max_violation --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet_max/2
+--experiment_name=coco_triplet_max --criterion triplet --max_violation --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet_max/3
+--experiment_name=coco_triplet_max --criterion triplet --max_violation --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet_max/4
+--experiment_name=coco_triplet --criterion triplet --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet/0
+--experiment_name=coco_triplet --criterion triplet --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet/1
+--experiment_name=coco_triplet --criterion triplet --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet/2
+--experiment_name=coco_triplet --criterion triplet --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet/3
+--experiment_name=coco_triplet --criterion triplet --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/triplet/4
+--experiment_name=coco_ntxent --criterion ntxent --tau 0.1 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ntxent/0
+--experiment_name=coco_ntxent --criterion ntxent --tau 0.1 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ntxent/1
+--experiment_name=coco_ntxent --criterion ntxent --tau 0.1 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ntxent/2
+--experiment_name=coco_ntxent --criterion ntxent --tau 0.1 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ntxent/3
+--experiment_name=coco_ntxent --criterion ntxent --tau 0.1 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ntxent/4
+--experiment_name=coco_ranking --criterion ranking --ranking_based --tau 0.01 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ranking/0 --num_epochs=150 --lr_update=75
+--experiment_name=coco_ranking --criterion ranking --ranking_based --tau 0.01 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ranking/1 --num_epochs=150 --lr_update=75
+--experiment_name=coco_ranking --criterion ranking --ranking_based --tau 0.01 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ranking/2 --num_epochs=150 --lr_update=75
+--experiment_name=coco_ranking --criterion ranking --ranking_based --tau 0.01 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ranking/3 --num_epochs=150 --lr_update=75
+--experiment_name=coco_ranking --criterion ranking --ranking_based --tau 0.01 --logger_name {path to repo}/out/vsepp/out/coco/paper_experiments/ranking/4 --num_epochs=150 --lr_update=75
