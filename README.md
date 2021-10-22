@@ -78,7 +78,7 @@ In in the `*.job` and `*hyper_params.txt` you can set the following parameters.
 - `--ranking_based`: Flag to indicate that we optimize a ranking. I.e., we want to use all the captions that match to an image.
 - `--tau`: Tau hyper-parameter value for SmoothAP and NTXent
 - `--logger_name`: Path where all the log-files are stored. Use the following format `{path to repo}/out/{method}/out/{dataset}/paper_experiments/{loss }/{experiment number}`. For {loss} use `triplet_max`, `triplet`, `ntxent`, `ranking`.
-- `--num_epochs`: number of training epochs.
+- `--num_epochs`: Number of training epochs.
 - `--lr_update`: Drop lr after n epochs with factor 0.1.
 
 The rest of the method specific parameters can be found in `vseppp/train.py` and `VSRN/train.py`.
