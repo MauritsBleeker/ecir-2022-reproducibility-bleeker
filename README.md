@@ -66,20 +66,23 @@ We run each experiment five times. The model files for each experiment are store
 ### Training parameters
 
 In in the `*.job` and `*hyper_params.txt` you can set the following parameters. 
-- `--data_name`: name of the datasets used. For VSE++ `f30k` and `coco` for VSRN `f30k_precomp` and `coco_precomp`.
+- `--data_name`: name of the datasets used in the work. For VSE++ use `f30k` and `coco`, for VSRN use `f30k_precomp` and `coco_precomp`.
 - `--data_path`: path where datasets are stored.
-- `--vocab_path`: path where vocan files are stored.
-- `--max_violation`: Only using the maximum voilating triplet in the batch. I.e. Triplet loss SH. 
+- `--vocab_path`: path where vocab files are stored.
+- `--max_violation`: Only use the maximum voilating triplet in the batch per query. I.e. Triplet loss SH. Only possible in combination with triplet loss.
 - `--cnn_type`: For VSE++ only, use `resnet50`.
 - `--workers`: number of workers for the data loader, default is 10.
 - `--max_len`: for VSRN only, max length of the caption.
 - `--experiment_name`: name of the experiment, for `wandb`. Options used: `triplet_max`, `triplet_max`, `triplet`, `ntxent`, `smoothap`.
-- `--criterion`: Loss functions used for tranking. Options used: `triplet`, `ntxent`, `ranking` (SmoothAP).
+- `--criterion`: Loss functions used for training. Options used: `triplet`, `ntxent`, `ranking` (SmoothAP).
 - `--ranking_based`: Flag to indicate that we optimize a ranking. I.e., want to use all the captions that match to an image.
 - `--tau`: tau hyper-parameter value for SmoothAP and NTXent
 - `--logger_name`: path where all the log files are stored. Use the following format `{path to repo}/out/{method}/out/{dataset}/paper_experiments/{loss }/{experiment number}`. For {loss} use `triplet_max`, `triplet`, `ntxent`, `ranking`.
-- `--num_epochs`
+- `--num_epochs`: number of training epochs.
+- `--lr_update`: Drop lr after n epochs with factor 0.1.
+
 The rest of the method specific parameters can be found in `vseppp/train.py` and `VSRN/train.py`.
+
 ### Run evaluation
 
 In `/evaluation`, the notebooks are provided to generate all the results tables from sections 3 and 5. 
