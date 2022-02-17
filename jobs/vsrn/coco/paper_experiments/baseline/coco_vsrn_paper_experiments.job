@@ -14,7 +14,7 @@
 
 conda activate MMC_reproduce
 
-HPARAMS_FILE={path to repository}/jobs/vsrn/coco/paper_experiments/baseline/coco_vsrn_paper_experiments_hyper_params.txt
+HPARAMS_FILE=$(pwd)/jobs/vsrn/coco/paper_experiments/baseline/coco_vsrn_paper_experiments_hyper_params.txt
 
 export PYTHONPATH=$PYTHONPATH:{path to repository}/shared:{path to repository}
 

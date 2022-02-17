@@ -16,7 +16,7 @@
 conda activate MMC_reproduce
 
 export PYTHONPATH=$PYTHONPATH:{path to repository}/shared:{path to repository}
-HPARAMS_FILE={path to repository}/jobs/vsepp/f30k/paper_experiments/baseline/f30k_vsepp_paper_experiments_hyper_params.txt
+HPARAMS_FILE=$(pwd)/jobs/vsepp/f30k/paper_experiments/baseline/f30k_vsepp_paper_experiments_hyper_params.txt
 
 
 # Start the experiment.

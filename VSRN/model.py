@@ -224,8 +224,7 @@ class EncoderImagePrecompAttn(nn.Module):
         self.Rs_GCN_3 = Rs_GCN(in_channels=embed_size, inter_channels=embed_size)
         self.Rs_GCN_4 = Rs_GCN(in_channels=embed_size, inter_channels=embed_size)
 
-        if self.data_name == 'f30k_precomp':
-            self.bn = nn.BatchNorm1d(embed_size)
+        self.bn = nn.BatchNorm1d(embed_size)
 
     def init_weights(self):
         """Xavier initialization for the fully connected layer
@@ -259,8 +258,7 @@ class EncoderImagePrecompAttn(nn.Module):
         # features = torch.mean(rnn_img,dim=1)
         features = hidden_state[0]
 
-        if self.data_name == 'f30k_precomp':
-            features = self.bn(features)
+        features = self.bn(features)
                
         # normalize in the joint embedding space
         if not self.no_imgnorm:

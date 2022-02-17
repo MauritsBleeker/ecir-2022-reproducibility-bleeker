@@ -17,7 +17,7 @@ conda activate MMC_reproduce
 
 export PYTHONPATH=$PYTHONPATH:{path to repo}/shared:{path to repo}
 
-HPARAMS_FILE={path to repo}/jobs/vsepp/coco/paper_experiments/baseline/coco_vsepp_paper_experiments_hyper_params.txt
+HPARAMS_FILE=$(pwd)/coco_vsepp_paper_experiments_hyper_params.txt
 
 # Start the experiment.
-python /home/mbleeke1/MMC_reproduce/vsepp/train.py --data_name=coco --data_path={path to repo}/data/vsepp/coco --vocab_path={path to vocab}/ivi/ilps/personal/mbleeke1/mmc_reproduce/data/vsepp/coco --cnn_type=resnet50 --workers=10 $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)
+python {path to repository}/train.py --data_name=coco --data_path={path to repo}/data/vsepp/coco --vocab_path={path to vocab}/ivi/ilps/personal/mbleeke1/mmc_reproduce/data/vsepp/coco --cnn_type=resnet50 --workers=10 $(head -$SLURM_ARRAY_TASK_ID $HPARAMS_FILE | tail -1)

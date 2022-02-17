@@ -1,4 +1,4 @@
-This is the PyTorch code repository for the ECIR reproducibility track submission: "Do Lessons from Metric Learning Generalize to Image-Caption Retrieval?" By Maurits Bleeker and Maarten de Rijke.
+This is the PyTorch code repository for the ECIR 2022 reproducibility track submission: "Do Lessons from Metric Learning Generalize to Image-Caption Retrieval?" By Maurits Bleeker and Maarten de Rijke.
 
 This project is built on top of/is using  the code of [VSE++](https://github.com/fartashf/vsepp), [VSRN](https://github.com/KunpengLi1994/VSRN/), and some work of [SmoothAP](https://github.com/Andrew-Brown1/Smooth_AP). 
 
@@ -25,7 +25,7 @@ For the [VSRN](https://github.com/KunpengLi1994/VSRN/) method, we used the all d
 
 For VSE++ we have reformatted the data to a pickle file and changed the data loader. We did this to improve the training time. 
 The data for the Flickr30k dataset (train/test/val + vocab)  can be downloaded [here](https://surfdrive.surf.nl/files/index.php/s/qnWabw1G5IqwARm?path=%2Fdata%2Fvsepp%2FVSEPP%2Ff30k). 
-The MS-COCO dataset is too big to upload in one file and will be uploaded upon acceptance. However, if the [MS-Coco](https://cocodataset.org/#home) caption dataset is formatted by using the format below, using [dataset_coco.json](https://surfdrive.surf.nl/files/index.php/s/qnWabw1G5IqwARm?path=%2Fdata), then the experiments can be executed.
+The MS-COCO dataset is too big to upload in one file. However, if the [MS-Coco](https://cocodataset.org/#home) caption dataset is formatted by using the format below, using [dataset_coco.json](https://surfdrive.surf.nl/files/index.php/s/qnWabw1G5IqwARm?path=%2Fdata), then the experiments can be executed.
 In `/notebooks` we provide a example script on how to format the MS-COCO data. Be aware that this is not the script we have used for our experiments, so there might be some differences.
 The vocab file for MS-COCO can be found [here](https://surfdrive.surf.nl/files/index.php/s/qnWabw1G5IqwARm?path=%2Fdata%2Fvocab_vsrn)
 

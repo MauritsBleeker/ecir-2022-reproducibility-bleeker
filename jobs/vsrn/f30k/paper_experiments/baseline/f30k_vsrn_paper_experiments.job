@@ -15,7 +15,7 @@
 
 conda activate ecir_reproduce_bleeker
 
-HPARAMS_FILE={path to repository}/jobs/vsrn/f30k/paper_experiments/baseline/f30k_vsrn_paper_experiments_hyper_params.txt
+HPARAMS_FILE=$(pwd)/jobs/vsrn/f30k/paper_experiments/baseline/f30k_vsrn_paper_experiments_hyper_params.txt
 
 export PYTHONPATH=$PYTHONPATH:{path to repository}/shared:{path to repository}
 
